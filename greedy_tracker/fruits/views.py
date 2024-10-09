@@ -25,8 +25,9 @@ def search_fruit_set(request):
 
 
         results = FruitSet.objects.filter(fruit1=fruit1, fruit2=fruit2, fruit3=fruit3, fruit4=fruit4, fruit5=fruit5)
-
+        
         return render(request, 'fruits/search_results.html', {'results': results})
+    
     return render(request, 'fruits/search_fruit_set.html')
 
 

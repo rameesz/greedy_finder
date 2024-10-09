@@ -17,15 +17,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/ 
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-zgf5x35k683g_3#y8xtw_9=ah=uood#a+%l3=xa+_qf%btnwsz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.7', 'fruit.tracker.com']  # Replace with your local IP address
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -76,8 +78,12 @@ WSGI_APPLICATION = 'greedy_tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'greedydb',
+        'USER': 'postgres',
+        'PASSWORD': 'route',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
